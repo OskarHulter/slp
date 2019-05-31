@@ -1,19 +1,8 @@
 import React from 'react'
-import './App.css'
 import { Header } from '../header/Header'
+import { Content } from '../content/Content'
 import { Footer } from '../footer/Footer'
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
-
-const theme = {
-  colorPrimary: '#7037BF',
-  colorSecondary: '#FF83C6',
-  colorBackground: '#0057AC',
-  colorText: '#E8CCC3',
-  colorAffirmative: '#11819C',
-  colorNegative: '#D92563',
-  colorCaution: '#FEDF00',
-  textFont: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif'
-}
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -24,23 +13,27 @@ const GlobalStyle = createGlobalStyle`
     --colorAffirmative: #11819C;
     --colorNegative: #D92563;
     --colorCaution: #FEDF00;
-    --textFont: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif'
+    --textFont: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
   body {
-    color: var(--colorText);
+    color: var(--colorSecondary);
     background: var(--colorBackground);
     font-family: var(--textFont);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 `
 
 const App: React.FC = () =>
-  <ThemeProvider theme={theme}>
-    <>
-      <GlobalStyle />
-      <Header />
-      <Footer />
-    </>
-  </ThemeProvider>
+  <>
+    <GlobalStyle />
+    <Header />
+    <Content />
+    <Footer />
+  </>
 
 export default App

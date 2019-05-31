@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const StyledNav = styled.footer`
+const StyledNav = styled.nav`
   grid-area: nav;
-  color: --var(colorText);
-  background: --var(colorPrimary);
+  color: var(--colorSecondary);
+  background: var(--colorAffirmative);
 `
 
 export const Nav: React.FC = props =>
